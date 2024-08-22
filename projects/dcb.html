@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DCB Tests</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style>
+            /* Ensure the image scales down if the viewport is smaller */
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+            
+            /* Optional: Styling the container to demonstrate responsiveness */
+            .image-container {
+                max-width: 800px;  /* Example maximum width for the container */
+                margin: auto;      /* Center the container */
+                padding: 10px;
+            }
+            /* Style for the caption */
+            figcaption {
+                margin-top: 10px;
+                font-style: italic;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../index.html">Pranav Rane</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+                <nav id="menu">
+                    <div class="inner">
+                        <h2>Menu</h2>
+                        <ul class="links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="engineering.html">Engineering</a></li>
+                            <li><a href="physics.html">Physics</a></li>
+                            <li><a href="computer_science.html">Computer Science</a></li>
+                            <li><a href="media.html">Media</a></li>
+                        </ul>
+                        <a href="#" class="close">Close</a>
+                    </div>
+                </nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Computer vision for double cantilever beam tests</h2>
+								<p>
+                                </p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<section>
+                                        <!--
+										<h3 class="major">Text</h3>
+										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+										<h4>Blockquote</h4>
+										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+										<h4>Preformatted</h4>
+										<pre><code>i = 0;
+                                        -->
+                                        <h3 class="major">Background</h3>
+
+<p>
+
+    Double Cantilever Beam (DCB) tests are a fundamental method used in the field of materials science and engineering to evaluate the fracture toughness of adhesive joints, composite materials, and other bonded structures. This test is particularly significant in assessing the resistance to crack growth under mode I loading, where the crack faces are pulled apart perpendicular to the crack front.
+
+</p>
+<p>
+    The DCB test involves a specimen that typically consists of two arms bonded together along a plane with an initial crack or pre-crack. The specimen is subjected to a tensile load applied at the ends of the arms, causing the crack to propagate (Figure 1). The critical parameters of the test include the load, displacement, and crack length, which are used to calculate the mode I fracture toughness, \(G_{I}c\). 
+
+    <div class="image-container">
+        <img src="images/dcb1.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 1. DCB schematic.</center>
+    </figcaption>
+
+</p>
+
+<p>
+    The mode I fracture toughness is determined using the following relation:
+
+    \begin{equation}
+    G_{I}c = \frac{P \delta}{2Ba}
+    \end{equation}
+    where \(P\) is the applied load, \(\delta\) is the displacement, \(B\) is the specimen width, and \(a\) is the crack length.
+</p>
+
+<p>
+    DCB tests are extensively used in various industries, including aerospace, automotive, and civil engineering, due to their reliability in evaluating the performance of materials and bonded joints. In the aerospace sector, for instance, DCB tests are crucial for assessing the durability and safety of composite materials used in aircraft structures. Similarly, in the automotive industry, these tests help in the development of lightweight and strong adhesive bonds, contributing to the overall safety and efficiency of vehicles.
+</p>
+
+<h3 class="major">Methods</h3>
+
+<p>
+I had access to several high quality DCB test videos. I implemented code in Matlab that provided a user interface to track the crack growth as the load \(P\) was increased. The user simply had to select the initial starting crack position, and then my template matching algorithm would track the growth of the crack in each consecutive image frame.
+</p>
+
+<p>
+    In addition to quantifying the crack length, I also wanted to automatically obtain angular data of the ends of the specimen. I implemented a gradient filter to detect the edge of the beam, and output the angle each arm made with the horizontal. 
+</p>
+
+
+<h3 class="major">Results</h3>
+
+<p>
+The template matching algorithm provided good estimates of the location of the tip of the crack across several datasets (Figures 2-3)
+
+
+<div class="image-container">
+    <img src="images/Dataset1-ezgif.com-video-to-gif-converter.gif" alt="Description of the image">
+</div>
+<figcaption>
+    <center>Figure 2. Crack length tracking on dataset 1.</center>
+</figcaption>
+<div class="image-container">
+    <img src="images/Dataset2-ezgif.com-video-to-gif-converter.gif" alt="Description of the image">
+</div>
+<figcaption>
+    <center>Figure 3. Crack length tracking on dataset 2.</center>
+</figcaption>
+
+
+
+</p>
+
+<p>
+    The gradient filter algorithm also provided accurate angular measurements of the edges of the beam (Figure 4).
+
+    <div class="image-container">
+        <img src="images/dcb_angle.gif" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 4. Rotation tracking on dataset 1.</center>
+    </figcaption>
+
+</p>
+
+<p>
+    My algorithm was used to extract important parameters of the DCB test, aiding in the accuracy and efficieny of fracture analysis for materials.
+</p>
+
+
+
+
+                                    </section>
+
+				<!-- Footer -->
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

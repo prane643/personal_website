@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Structure Analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style>
+            /* Ensure the image scales down if the viewport is smaller */
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+            
+            /* Optional: Styling the container to demonstrate responsiveness */
+            .image-container {
+                max-width: 800px;  /* Example maximum width for the container */
+                margin: auto;      /* Center the container */
+                padding: 10px;
+            }
+            /* Style for the caption */
+            figcaption {
+                margin-top: 10px;
+                font-style: italic;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../index.html">Pranav Rane</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+                <nav id="menu">
+                    <div class="inner">
+                        <h2>Menu</h2>
+                        <ul class="links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="engineering.html">Engineering</a></li>
+                            <li><a href="physics.html">Physics</a></li>
+                            <li><a href="computer_science.html">Computer Science</a></li>
+                            <li><a href="media.html">Media</a></li>
+                        </ul>
+                        <a href="#" class="close">Close</a>
+                    </div>
+                </nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>3-D Structure Analysis of Fiber Reinforced Composites using convolutional neural networks</h2>
+								<p>
+                                </p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<section>
+                                        <!--
+										<h3 class="major">Text</h3>
+										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+										<h4>Blockquote</h4>
+										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+										<h4>Preformatted</h4>
+										<pre><code>i = 0;
+                                        -->
+                                        <h3 class="major">Background</h3>
+
+<p>
+
+    Carbon fiber reinforced composites (CFRCs) are materials that have revolutionized industries from aerospace to sports equipment. These materials combine the exceptional strength and stiffness of carbon fibers with the binding properties of a polymer matrix, resulting in a composite material with an extraordinary strength-to-weight ratio.
+</p>
+<p>
+    The arrangement, or layout, of carbon fibers within a composite is paramount in determining its overall properties. This is due to the anisotropic nature of carbon fibers, meaning their properties vary depending on the direction of the applied load.
+</p>
+
+<p>
+In a unidirectional layout, the configuration involves aligning all carbon fibers in a single direction (FIgure 1a). This maximizes strength and stiffness along that specific axis, making it ideal for components subjected to primarily axial loads, such as load-bearing beams or aircraft wings. However, it offers limited strength and stiffness in other directions.
+</p>
+
+<p>
+In a multidirectional layout, the carbon fibers are oriented in multiple directions within a composite (FIgure 1b and 1c). This approach provides a more balanced distribution of strength and stiffness, making it suitable for components subjected to complex loading conditions, such as automotive body panels or pressure vessels.
+</p>
+
+<p>
+    <div class="image-container">
+        <img src="images/sa_1.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 1. a) Unidirectional CFRC. b) Cross-oriented CFRC. c) Randomly oriented multidirectional CFRC. https://www.bfginternational.com/what-we-do/matrix-reinforcements</center>
+    </figcaption>
+</p>
+
+
+<p>
+    The optimal fiber layout is crucial for maximizing the performance of a CFRC component. Incorrect fiber orientation can lead to reduced strength, stiffness, and durability, potentially compromising the component's integrity.
+</p>
+
+<h3 class="major">Fiber Layout Determination</h3>
+
+<p>
+    Precisely determining the actual fiber layout within a CFRC is essential for several reasons:
+    <ul>
+        <li>Verifying that the manufactured composite adheres to the designed fiber layout is crucial for ensuring product quality and reliability</li>
+        <li>Understanding the fiber orientation in a failed component can provide valuable insights into the cause of failure, enabling improvements in future designs</li>
+        <li>Real-time monitoring of fiber layout during the manufacturing process can enable process optimization and the creation of complex, high-performance components</li>
+    </ul>
+</p>
+
+<p>
+    Therefore, developing algorithms capable of accurately determining the fiber layout within a CFRC is a critical step.
+</p>
+
+<h3 class="major">Data collection</h3>
+
+<p>
+Using X-ray tomographic image stacks of a CFRC specimen (Figures 2 and 3) I have developed a machine learning algorithm that identifies the centers of carbon fibers at every position through the depth of the composite.
+The algorithm works by collecting image data of carbon fiber cross sections and using them as training data for a convolutional neural network (CNN).
+
+<div class="image-container">
+    <img src="images/sa_2.gif" alt="Description of the image">
+</div>
+<figcaption>
+    <center>Figure 2. Animated image stack of the multidirectional CFRC.</center>
+</figcaption>
+<div class="image-container">
+    <img src="images/sa_3.gif" alt="Description of the image">
+</div>
+<figcaption>
+    <center>Figure 3. Animated image stack of the unidirectional CFRC. There is less movement because the images are taken along the same axis as the fiber direction.</center>
+</figcaption>
+
+I developed a user-friendly way to collect data that is described below:
+
+<ol>
+<li>Quickly select centers of cross sections and using mouse
+    <div class="image-container">
+        <img src="images/sa_4.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 4. Manual selection of fiber centroids.</center>
+    </figcaption>
+</li>
+
+<li> These points then fit a bounding box around each fiber. Any fine adjustments to the position, width, and height of each bounding box can be adjusted using the keyboard.
+    <div class="image-container">
+        <img src="images/sa_5.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 5. a) Original bounding box for a given fiber. b) Centered bounding box using arrow keys. c) Adjusted width and height to encapsulate fiber.</center>
+    </figcaption>
+
+</li>
+<li>
+    This adjustment process is repeated for each fiber. Then, the bounding box image data is exported with an associated label of "fiber".
+</li>
+
+<li>
+    Then, all the bounding boxes that were not selected are exported with an associated label of "not-fiber".
+</li>
+
+</ol>
+
+<h3 class="major">The algorithm</h3>
+<p>
+    Once data has been collected, a CNN is trained for each bounding box size that was collected. This CNN essentially classifies an image (with the same size of the bounding box it was trained on) as "fiber" or "not-fiber".
+    
+</p>
+
+<p>
+    Sliding windows are then used on the test image to extract smaller images with sizes of the bounding box sizes. These images are inputted into the corresponding CNN (that was trained on the same size image). Each CNN then outputs a confidence map that contains the probability that each pixel in the original test image is a "fiber" with the corresponding bounding box size.
+</p>
+
+<p>
+    These probablities are averaged together. Then, I filter out any overlapping detections using non-maximum suppression (NMS). 
+</p>
+
+<h3 class="major">Results</h3>
+
+<p>
+    The algorithm I devised performed very well on extracting fiber centroids in both unidirectional and multidirectional CFRCs. The results for each are shown in Figure 6 and Figure 7.
+    <div class="image-container">
+        <img src="images/sa_6.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 6. Fiber detection results for unidirectional CFRC.</center>
+    </figcaption>
+    <div class="image-container">
+        <img src="images/sa_7.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 7. Fiber detection results for multidirectional CFRC.</center>
+    </figcaption>
+</p>
+
+<p>
+    With accurate fiber detection, I segmented the entire CFRC image stack to obtain the three-dimensional structure of the fiber layout (Figure 8). Thus, this framework has shown to be effective in analyzing CFRC fiber structure.
+    
+    <div class="image-container">
+        <img src="images/ucl_cnn_title.png" alt="Description of the image">
+    </div>
+    <figcaption>
+        <center>Figure 8. Three dimensional fiber layout of the multidirectional CFRC.</center>
+    </figcaption>
+</p>
+
+
+
+
+                                    </section>
+
+				<!-- Footer -->
+
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

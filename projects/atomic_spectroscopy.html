@@ -1,0 +1,454 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Atomic Spectroscopy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style>
+            /* Ensure the image scales down if the viewport is smaller */
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+            
+            /* Optional: Styling the container to demonstrate responsiveness */
+            .image-container {
+                max-width: 800px;  /* Example maximum width for the container */
+                margin: auto;      /* Center the container */
+                padding: 10px;
+            }
+            /* Style for the caption */
+            figcaption {
+                margin-top: 10px;
+                font-style: italic;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="../index.html">Pranav Rane</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+                <nav id="menu">
+					<div class="inner">
+						<h2>Menu</h2>
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="engineering.html">Engineering</a></li>
+							<li><a href="physics.html">Physics</a></li>
+							<li><a href="computer_science.html">Computer Science</a></li>
+							<li><a href="media.html">Media</a></li>
+						</ul>
+						<a href="#" class="close">Close</a>
+					</div>
+				</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Atomic Spectroscopy: Validation and Analysis</h2>
+								<p>Atomic spectroscopy is an important experimental technique used in the characterization of materials.
+                                    Here I walk through fundamental theory and provide experimental data and analysis of various materials from hydrogen gas to indium phosphide quantum dots.
+                                </p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<section>
+                                        <!--
+										<h3 class="major">Text</h3>
+										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+										<h4>Blockquote</h4>
+										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+										<h4>Preformatted</h4>
+										<pre><code>i = 0;
+                                        -->
+<h3 class="major">Abstract</h3>
+
+<p>This study analyzes and attempts to validate accepted theory regarding atomic spectroscopy. The methods conducted use two spectroscopy
+    tools to record the emission spectrum of hydrogen: a manual contraption
+    that relies on the naked eye via wave diffraction, and an electronic sensor that outputs numerical emission data. Data
+    collected in both methods suggest a linear relationship between \( 1/\lambda \) and \( 1/\text{n}^2 \)
+    which agrees with theory. However, data collected via the manual spectrometer did not agree with the accepted value of \( R \) due to a
+    small dataset size and low precision. Our experimental value using
+    the electronic spectrometer was \( R=10960000 \pm 38000 \) with respect to a 95
+    percent confidence interval, which agrees with the accepted value. This
+    study qualitatively compares the emission spectra of various atomic
+    and bonded sources. We find that the bonded sources contain more complex and complete spectra compared to atomic sources. Finally, this study
+    analyzes the emission spectra of indium phosphide quantum dots with
+    various radii. We find a linear relationship between \( 1/\lambda \) and \( 1/\text{r}^2 \) as theory
+    suggests. Our estimated values for the effective mass of an electron and
+    the band gap energy, \( \text{m} = (0.0612±.012)\text{m}_\text{e} \) and \( \text{E}_\text{gap} = 1.265\text{eV} ±.15\text{eV} \)
+    respectively, agreed with accepted values. Atomic spectroscopy theory is
+    the foundation of many applications across various fields, heightening the
+    importance of understanding and validating it.</p>
+
+                                        <!-- <p>This is an inline equation: \( E = mc^2 \).</p> -->
+                                        
+
+<h3 class="major">Introduction</h3>
+
+<p>
+Spectroscopy is a method scientists use to study the light emitted by matter.
+Since everything we observe on a daily basis is comprised of matter, spectroscopy
+has a wide range of applications in cosmology, chemistry, biology, medicine, engineering, and other fields. Scientists have taken advantage of the fact that
+every element in our universe, when supplied with a particular amount of energy, emits photons at various energies across the electromagnetic spectrum.
+The various energies of emitted photons, however, are unique to each element.
+Therefore, it is possible for scientists to piece together the elemental constituents
+of a chemical compound simply by analyzing the energies of photons released
+by it. The energies of released photons have distinct wavelengths according to
+the relation
+
+\[ \text{E}_{\text{photon}}=\frac{hc}{\lambda} \]
+
+where \( h \) is Planck’s constant and \( c \) is the speed of light.
+
+Therefore, each element emits photons of distinct wavelengths. In order
+to quantitatively measure the wavelengths emitted, light
+diffraction can be used to separate emitted photon wavelengths from the source.
+A diffraction grating works by allowing incident plane waves from the source
+to pass through very narrowly spaced slits. This causes constructive
+and destructive interference at various angles (Fig. 1). Points of constructive
+interference occur at peaks at an angular displacement \( \theta \) governed by the equation
+
+\[ d \sin{\theta} = m \lambda \]
+
+where \( d \) is the distance between slits in the grating and \( m \) is the diffraction
+order. The diffraction order can be any integer in a finite integer set centered
+at zero. By measuring the angle \( \theta \) of diffracted light at the constructively
+interfering peaks, Eq. 2 can be used to calculate the peak wavelengths \( \lambda \) of
+diffraction.
+</p>
+
+<p>
+    The emission of photons from a source is primarily due to electrons changing
+energy levels within its constituent atom. More specifically, when an electron
+absorbs the right amount of energy from its environment, it can jump to a higher energy level.
+In this case, the electron is in its excited state. Eventually, the electron de-excited and falls back to a lower
+energy level. As a result of de-excitation, the electron releases a photon of equal energy to the difference
+between the initial electron energy level and its final energy level. Take the hydrogen atom 
+which has one electron. Its emission spectrum can be modelled by Balmer’s formula
+
+\[ \frac{1}{\lambda} = R \left( \frac{1}{n^2_{\text{final}}} - \frac{1}{n^2_{\text{initial}}} \right) \]
+
+where \( R \) is a constant with accepted value \( 10973731.568549 \pm 0.000083 \text{ m}^{−1} \),
+\( n_{\text{initial}} \) is the electron energy level after excitation, and \( n_{\text{final}} \)
+is the electron energy level after de-excitation. Thus we can see that when \( n_{\text{final}}=2 \)
+the peak wavelengths of the hydrogen emission spectrum are in the visible wavelengths.
+</p>
+
+
+<p>
+    An important application of spectra comes in analyzing
+quantum dots. Quantum dots are essentially artificial atoms, each of which
+are comprised of a cluster of atoms of a semiconductor which release photons
+at prescribed energies. The clusters are of nanometer-scale and small
+enough to allow an electron to be bound to it. This electron is very strongly
+bound to the dot such that it is not permitted to move freely. An electron
+in this state is known to be in the valence band. If this electron absorbs a
+particular amount of energy from its environment, it can transition to a higher
+quantum state called the conduction band, where the electron is permitted
+to move throughout the dot. The difference in energy of the electron between the valence band and the
+conduction band is the band gap energy, \( \text{E}_{\text{gap}} \), which depends on the
+chemical structure of the quantum dot. For the electron to transition to the
+conduction band, it must, at a minimum, be provided
+with energy equal to the band gap energy plus the kinetic energy corresponding
+to the lowest energy state of the conduction band. The lowest energy state of
+the conduction band is dependent on the radius of the quantum dot. Therefore,
+the total energy required to transition an electron from the valence band to the
+conduction band is:
+
+\[ \text{E}_{\text{total}} = \text{E}_{\text{gap}} + \text{E}_{\text{kinetic}} = \text{E}_{\text{gap}} + \frac{h^{2}}{8\text{m}r^{2}}\]
+
+where \( \text{m} \) is the effective mass of the electron (which can vary from its mass in
+a vacuum), and \( r \) the radius of the quantum dot. Once an excited electron in the conduction band falls back into the valence
+band, it releases a photon of energy \( \text{E}_{\text{total}}\). It is important to note that there
+exists other energy states of the conduction band with higher kinetic energies.
+However, the difference in these energies are relatively small compared to the
+magnitude of the lowest state kinetic energy, so this does not result in a noticeable difference in energy of the emitted photon. 
+
+This study first explores and analyzes the emission
+spectrum of hydrogen using two different spectrometers. Then, the
+emission spectra of atomic sources are compared to those of chemical compounds. Finally, the emission spectra of indium phosphide quantum dots are
+ analyzed with special attention to the relation between photon energy emission and quantum dot radius.
+
+<h3 class="major">Methods</h3>
+
+<p>
+A laboratory desk was used with an aluminum breadboard for mounting apparatuses. Two different spectrometers were used to collect emission spectra from
+specimens. The first was a Griffin spectrometer which uses angular displacements of light ray diffraction to separate and measure wavelengths from a source
+(Fig. 3a). Light from the source enters via a slit in the first cylinder which acts
+as a collimating telescope. The entry slit width can be adjusted via a knob on
+the instrument. The light waves pass the first cylinder and enter a diffraction
+grating. The Griffin spectrometer uses a diffraction grating with slit spacing
+\( 1.67 \times 10^{−6} \text{ m} \) (Fig. 3b). Light waves passing through the grating are received
+by the second cylinder which acts as a pivoting telescope. The pivoting telescope can be adjusted to any angle to intercept diffracted rays. The intercepted
+rays then enter a lens with a crosshair, for which the user can precisely record
+the angle measurement. Measurements are recorded in degrees using a Vernier
+scale which gives precision to the first decimal place (Fig. 3c). The second
+is a computerized Ocean Optics Red Tide USB650 spectrometer which uses
+LoggerPro software to display data (Fig. 4). The computerized spectrometer
+uses connection to a fiber optic cable that is placed in front of the specimen.
+The light source comprised of a discharge lamp housing unit which provided
+voltage to the various specimen (Fig. 5a). The specimen included hydrogen,
+helium, nitrogen, and carbon dioxide gas, and were contained in individual
+glass tubes (Fig. 5b). Once the specimen were placed inside the discharge lamp
+housing, they emitted light as electrons in the gas de-excite.
+A handheld diffraction grating was used to qualitatively analyze the emission
+spectra of the specimens (Fig. 6).
+We used four indium phosphide quantum dots of various radii for analysis
+of band gap energy and photon wavelength emission (Fig. 7a). LEDs of various
+wavelengths (Fig. 7b) were used to excite electrons in the quantum dots.
+</p>
+
+<h3 class="major">Experiment 1</h3>
+
+<p>
+    Experiment 1 aimed to collect data for the emission spectrum of hydrogen using
+the Griffin spectrometer. The room lights were switched off to keep environmental variables relating to electromagnetic radiation constant. This also allowed
+our pupils to be dilated to best view spectral lines. The hydrogen specimen was
+inserted inside the discharge housing unit, which was then placed adjacent to
+the collimator entry slit of the spectrometer. The slit width was adjusted so that
+we could accurately center the cross hairs on the light source. With the pivoting
+telescope centered on the source, we recorded the angle of un-diffracted light
+passing through the grating on the spectrometer. Then we rotated the pivoting
+telescope and recorded the angles and color at which light was diffracted from
+the grating.
+</p>
+
+<h3 class="major">Experiment 2</h3>
+
+<p>
+    Experiment 2 aimed to collect data for the emission spectrum of hydrogen using the Red Tide computerized spectrometer. The spectrometer was connected
+via USB to a lab computer with LoggerPro software installed. LoggerPro settings were configured such that sampling time was 50 milliseconds, wavelength
+smoothing set to zero, and results set to average from twenty samples. A fiber
+optic cable was inserted into the spectrometer, and the other end placed in front
+of the hydrogen light source using a standard mount. The intensity of the light
+source was then plotted as a function of wavelength in LoggerPro.
+</p>
+
+<h3 class="major">Experiment 3</h3>
+
+<p>
+    In order to analyze the emission spectrum across a variety of specimens, the specimens were viewed and imaged through a handheld diffraction grating. First,
+the hydrogen specimen was inserted into the discharge housing unit and was imaged with the diffraction grating. This was repeated for the helium, nitrogen,
+and carbon dioxide specimen.
+</p>
+
+<h3 class="major">Experiment 4</h3>
+
+<p>
+    Using one wavelength at a time, the LED was shone under each quantum dot
+vial. We recorded any effects the LED had on each vial, specifically if the vial
+emitted any additional visible light. This process was done for the red, yellow,
+green, and blue LEDs. The UV LED was shone under each vial, with the
+fiber optic cable of the Red Tide computerized spectrometer placed next to it
+to record the emission spectrum produced by the quantum dots. The radii of
+the quantum dots in each vial was recorded along with its associated emission
+spectrum.
+</p>
+
+<h3 class="major">Results</h3>
+
+<p>
+The emission diffraction angles for the hydrogen specimen were recorded for the
+\( m=0, 1, 2 \) diffraction orders (Fig. 8). We defined the angle of diffracted
+light as relative to \( m=0 \) un-diffracted light.
+The order in which colors appear for each diffraction order remain the same.
+In our experimental case, the violet emission line for \( m=2 \) was too dim to detect
+with the naked eye. However, the aqua and red wavelengths for \( m=2 \) follow this
+pattern. This is due to the diffraction maxima equation (Eq. 2). As \( \theta \) increases
+from zero on the left hand side, the right hand side must increase in magnitude. Therefore, for \( m=1 \) the lower wavelength light will be seen first, and as
+\( \theta \) increases, higher wavelengths of light are observed. Once \( \theta \) increases sufficiently, the diffraction order increases to two, and the wavelength downshifts.
+The wavelength then increases again as the angle continues to increase.
+Using Eq. 2, we can convert the angular measurements of diffraction into
+the peak wavelengths of diffraction. We can analyze the spectrometer results by
+plotting the inverse of the wavelength as a function of \( 1/n^2 \) where \( n\) is the initial
+energy level prior to de-excitation of the electron in the hydrogen atom (Fig. 9).
+Since visible light is caused by an electron where \( n_{\text{final}} =
+2 \), Eq. 3 can be rearranged:
+
+\[ \frac{1}{\lambda} = -R \frac{1}{n_{\text{final}}} + \frac{R}{4} \]
+
+Therefore, the magnitude of the slope in Fig. 9 gives an experimental prediction for \( R \). Using a t-distribution of
+the data, we can give a 95 percent confidence interval that \( R = 10784000±81000 \)
+(calculation of this confidence interval is further explained in Appendix A).
+The accepted value of \( R \) as shown below Eq. 3 is outside of the confidence
+interval stated above. This means that there is likely an error in the experimental equipment or setup, which is likely due to the small dataset
+size. Because of the limitations of the human eye, the Griffin spectrometer was
+only able to pick up on three of the spectral lines of hydrogen. Additionally,
+the Griffin spectrometer has a relatively low precision required for measuring
+wavelengths to the nanometer scale. The angular measurement of the Griffin
+was able to increase at an interval of 0.001745 radians, giving an error to the
+wavelength measurement at roughly \(\pm\)1 nanometer.
+</p>
+
+<p>The Red Tide USB650 computerized spectrometer detected light intensity as
+a function of wavelength for the emission of hydrogen (Fig. 10). By finding
+the peaks of the plot, we could calculate the wavelengths of photons emitted
+by the de-excitation of electrons in the hydrogen atom. Since we are only
+concerned with the visible emission spectrum of hydrogen for which \( n_{\text{final}} = 2 \),
+we disregarded peaks associated with wavelengths greater than 700nm which
+are primarily due to the specimen containing some hydrogen gas. The hydrogen gas causes the small peaks noticeable in between large peaks due to oscillations
+in the \( \text{H}_{2} \) bond.
+We can analyze the spectrometer results in a similar fashion by plotting \( 1/ \lambda \) as a function of 
+\( 1/n^2 \) (Fig. 11). Using
+the magnitude of the slope, we found the experimental estimate \( R = 10960000 \pm 38000.\) The accepted value of \( R \) falls within this estimate, therefore
+proving the validity of the experimental equipment and setup.
+</p>
+
+<p>
+    The spectra of hydrogen, helium, nitrogen, and carbon dioxide were imaged via
+a handheld diffraction grating (Fig. 12). Qualitatively,
+we can observe that bonded sources have different emission spectra characteristics than atomic sources. The spectra of bonded sources have a more complete
+range of emitted wavelengths in comparison to the atomic sources. We attribute
+this to the higher number of electrons at varying energy levels in bonded sources
+such as \(\text{CO}_2 \). After excitement these electrons have a chance to fall back into
+various different energy levels which each give off specific wavelengths of light.
+Additionally, the atoms in all molecules oscillate at some unique frequency due
+to their bond. These atomic oscillations replicate the motion of a simple harmonic oscillator (SHO) at small displacements, and therefore, the electrons of
+the individual atoms are confined to a SHO potential. In a SHO potential particles exhibit discrete energies corresponding to their quantum state \(n \) according
+to
+
+\[ \text{E}_{n} = (n+\frac{1}{2}) h \nu \]
+
+where \( \nu \) is the oscillatory frequency of the potential. However, \( \text{E}_{n} \) is much smaller in magnitude in comparison to the energy released by an electron as it transitions to a lower energy
+level. Therefore, the emitted photons due to electron de-excitement in a molecular source vary slightly depending on \( \text{E}_{n} \), which causes a more continuous or
+”blurred” emission spectrum. Singular atoms do not oscillate, therefore we observe clear, distinct wavelengths for helium in Fig. 12. However, we also observe
+that the emission lines for hydrogen and nitrogen appear blurred as if there were
+some sort of oscillatory behavior. We hypothesize that the blurred spectra for
+these two specimen are due to helium and nitrogen existing naturally as diatomic molecules. Therefore, there is likely some trace amount of hydrogen and
+nitrogen gas in each of the sample tubes which provide the oscillatory behavior
+we observe in the emission spectra.
+</p>
+
+<p>
+    The emission spectra of each of the vials under the ultraviolet LED were recorded
+via the Red Tide spectrometer. We plotted the wavelength of the emission of
+each vial vs. the intensity (Figs. 13, 14, 15, and 16). It is important to note that
+the intensity was not calibrated, so the actual value of the intensity is unitless.
+However, we can still use this intensity to compare the wavelengths that result
+in intensity peaks between quantum dot emission spectra.
+Each emission spectrum plot contains three high intensity peaks, two medium
+intensity peaks, and many small peaks. The ultraviolet LED wavelength should
+range roughly between 100nm to 400nm, corresponding to the first medium peak in all four plots. The three high intensity peaks remain constant throughout all
+four emission spectra. This was attributed to environmental factors in the experimental setup. Specifically, these high intensity peaks are most likely due
+to the computer screen from which data was being displayed. Therefore, the
+second medium peak must be due to the emitted photons of the quantum dot.
+We confirm this by noticing that the second small peak varies in all the emission
+spectrum plots. The very small peaks occur throughout the entire spectrum, so
+this can be attributed to radiation noise from the environment.
+</p>
+
+<p>
+    We can measure the peak emitted wavelengths of each quantum dot vial
+using the emission spectra plots (Fig. 17). We then solve for the gap energy \( \text{E}_{\text{gap}} \)
+and the effective mass of the electron \( \text{m} \) by plotting \( \frac{1}{\lambda} \) vs. \( \frac{1}{r^2} \) and calculating
+the slope and the y-intercept (Fig. 18). By rearranging Eq. 4 we get:
+ \[ \frac{1}{\lambda} = \frac{h}{8 \text{m} c^{2}} \frac{1}{r^2} + \frac{\text{E}_{\text{gap}}}{hc}\]
+
+The slope leads to an estimate
+of \( \text{m} ≈ 0.0612 \text{m}_{\text{e}} \) via Eq. 7. Similarly, the intercept of the plot leads to
+an estimate of \( \text{E}_{\text{gap}} ≈ 1.265\text{eV} \). Using a t-distribution we
+can put 95 percent confidence intervals such that \( \text{m} = (0.0612 \pm .012)\text{m}_{\text{e}} \) and
+\( \text{E}_{\text{gap}} = 1.265\text{eV} \pm 0.15\text{eV} \). The accepted values for the effective mass of the electron
+and the band gap energy of indium phosphide quantum dots are \( \text{m} = 0.065 \text{m}_{\text{e}} \)
+and \( \text{E}_{\text{gap}} = 1.344\text{eV} \), respectively.
+</p>
+
+<h3 class="major">Conclusion</h3>
+
+<p>
+This study aimed to confirm accepted, yet important observations regarding
+atomic spectroscopy. The study began with detecting the emission spectrum
+of hydrogen using two methods. The first used a manual spectrometer with a
+diffraction grating that separated peak wavelengths of the source. We found
+that this method was fairly accurate but did not allow us to gather enough data
+because of the limitations of the human eye. When plotting the inverse of the
+peak wavelengths as a function of \( n \), we observed a linear relationship as predicted by theory, but the measured value of \( R \) did not agree with the accepted
+value. This could be due to the small dataset size and the lack of precision in
+angular measurements. The second used a computerized spectrometer, which
+provided more data than the manual spectrometer. Under the same graphical analysis, we found an estimated value for \( R = 10960000 \pm 38000 \) which did
+agree with the accepted value. We continued the study by qualitatively analyzing the differences in emission spectra between atomic and bonded sources.
+We found that bonded sources exhibited more complex and complete spectra.
+We attributed this to the larger number of electrons in various energy levels in
+bonded atoms and the oscillatory effects of bonded atoms. Finally, the study
+concluded with an analysis of quantum dots and their dependence on chemical
+composition and dot radii in emitting various wavelengths of light. We found
+that our measured emission spectrum for each quantum dot under an ultraviolet LED had wavelength peaks that varied with the dot radius. In graphical
+analysis, we found that our data did agree with accepted values for the effective
+mass of electron and the band gap energy.
+</p>
+
+
+<div class="image-container">
+    <img src="images/354_plot3.png" alt="Description of the image">
+</div>
+
+
+
+<h3 class="major">References</h3>
+
+<p>[1] W. Smith, P. Thorman, Atomic Spectroscopy. Lab Manual (2022)</p>
+
+<p>[2] W. Smith, P. Thorman, Photoelectric Effect. Lab Manual (2022)</p>
+
+<p>[4] Star Strider, polyparci. (https://www.mathworks.com/matlabcentral/fileexchange/39126-
+    polyparci), MATLAB Central File Exchange. Retrieved April 13, 2022.</p>
+
+
+<h3 class="major">Appendix A</h3>
+
+<p>
+    Calculating confidence intervals with small datasets requires a t-distribution
+rather than a normal distribution. The calculation for the confidence interval
+was given by the function \( polyparci \) implemented in MATLAB [4]. This function
+uses the built-in MATLAB function \( polyfit \) to calculate the covariance matrix.
+The function then calculates the cumulative t-distribution given a user-specified
+confidence interval and the degrees of freedom.
+</p>
+
+
+
+
+
+									</section>
+
+									
+			
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
